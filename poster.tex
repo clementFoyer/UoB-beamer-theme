@@ -1,0 +1,76 @@
+\documentclass[final]{beamer}
+
+% Search for theme in a subfolder
+\makeatletter
+  \def\beamer@calltheme#1#2#3{%
+    \def\beamer@themelist{#2}
+    \@for\beamer@themename:=\beamer@themelist\do
+    {\usepackage[{#1}]{\beamer@themelocation/#3\beamer@themename}}}
+
+  \def\usefolder#1{
+    \def\beamer@themelocation{#1}
+  }
+  \def\beamer@themelocation{}
+
+\usefolder{UoB}
+\usetheme{UoBposter}
+\usepackage[orientation=portrait,size=custom,width=91.44,height=106.68,scale=1.5,debug]{beamerposter}  % e.g. custom size poster
+
+\usepackage{lipsum}
+\usepackage[english]{babel}
+
+\title{Title of the poster}
+\author{Authors Of, The Poster}
+\institute[University of Bristol]{Department of Computer Science, University of Bristol}
+\webpage{http://intelligentsystems.bristol.ac.uk}
+\email{<First.Last>@bristol.ac.uk}
+\date{\today}
+
+\begin{document}
+  \begin{frame}{}
+    \vfill
+    \begin{columns}[t]
+
+      \begin{column}{0.25\linewidth}
+        \begin{block}{1. First}
+          \scriptsize{\lipsum[1]}
+        \end{block}
+      \end{column}
+
+      \begin{column}{0.25\linewidth}
+        \begin{block}{3. Third}
+          \scriptsize{\lipsum[2]}
+        \end{block}
+      \end{column}
+
+      \begin{column}{0.4\linewidth}
+        \begin{block}{5. Fifth}
+          \scriptsize{\lipsum[3]}
+        \end{block}
+      \end{column}
+
+    \end{columns}
+    \vfill
+    \begin{columns}[t]
+
+      \begin{column}{0.25\linewidth}
+        \begin{block}{2. Second}
+          \scriptsize{\lipsum[4]}
+        \end{block}
+      \end{column}
+
+      \begin{column}{0.3\linewidth}
+        \begin{block}{4. Fourth}
+          \scriptsize{\lipsum[5]}
+        \end{block}
+      \end{column}
+
+      \begin{column}{0.35\linewidth}
+        \begin{block}{6. Sixth}
+          \scriptsize{\lipsum[6]}
+        \end{block}
+      \end{column}
+
+    \end{columns}
+  \end{frame}
+\end{document}

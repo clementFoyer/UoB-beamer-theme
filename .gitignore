@@ -1,3 +1,7 @@
+# MacOS
+*.DS_Store
+
+# LaTeX
 *.acn
 *.acr
 *.alg
@@ -6,6 +10,7 @@
 *.blg
 *.dvi
 *.fdb_latexmk
+*.fls
 *.glg
 *.glo
 *.gls
@@ -22,6 +27,7 @@
 *.nav
 *.nlo
 *.out
+*.pdf
 *.pdfsync
 *.ps
 *.snm

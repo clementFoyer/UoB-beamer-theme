@@ -5,10 +5,23 @@
     % Possible aspect ratios are 16:9, 16:10, 14:9, 5:4, 4:3 (default) and 3:2
     % (Remember to remove the colon)
 
-\usetheme{UoB}
-%\usetheme[compress]{UoB}     % Compress the margins
-%\usetheme[nourl]{UoB}        % Remove the footer with the URL
-%\usetheme[nowatermark]{UoB}  % Remove the watermark from the title page
+% Search for theme in a subfolder
+\makeatletter
+  \def\beamer@calltheme#1#2#3{%
+    \def\beamer@themelist{#2}
+    \@for\beamer@themename:=\beamer@themelist\do
+    {\usepackage[{#1}]{\beamer@themelocation/#3\beamer@themename}}}
+
+  \def\usefolder#1{
+    \def\beamer@themelocation{#1}
+  }
+  \def\beamer@themelocation{}
+
+\usefolder{UoB}
+\usetheme{UoBslides}
+%\usetheme[compress]{UoBslides}     % Compress the margins
+%\usetheme[nourl]{UoBslides}        % Remove the footer with the URL
+%\usetheme[nowatermark]{UoBslides}  % Remove the watermark from the title page
 
 % Generate handouts with notes (3 slides + 3 notes to 1 page)
 %\mode<handout>{

@@ -1,7 +1,8 @@
 # SPHERE University of Bristol presentation theme based on the PowerPoint template
 
-Copyright (c) 2012, David A.W. Barton (david.barton@bristol.ac.uk)
-Copyright (c) 2016, Tom Diethe (tom.diethe@bristol.ac.uk)
+Copyright (c) 2012, David A.W. Barton (david.barton@bristol.ac.uk)  
+Copyright (c) 2016, Tom Diethe (tom.diethe@bristol.ac.uk)  
+Copyright (c) 2017, Kacper Sokol (k.sokol@bristol.ac.uk)  
 All rights reserved.
 
 The latest version of this theme can be found on

@@ -30,6 +30,21 @@
 % SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\let\oldpgfdeclareimage\pgfdeclareimage
+\renewcommand{\pgfdeclareimage}[3][]{%
+  % first check local art directory to prefer it over TEXINPUTS paths
+  \IfFileExists{./UoB/#3}{%
+    \oldpgfdeclareimage[#1]{#2}{./UoB/#3}%
+  }{%
+    % check if we can found it in TEXINPUTS
+    \IfFileExists{#3}{%
+      \oldpgfdeclareimage[#1]{#2}{#3}%
+    }{%
+      \GenericError{}{Theme image #3 not found!}{Consult Pdf for all the details, but pressing 'H' might give you the right hint.}{The file '#3' has to be available either in a local 'UoB' directory or somehwere in your TEXMF tree.}
+    }%
+  }%
+}%
+
 % Compress the margins
 \newif\ifbeamer@compress
 \beamer@compressfalse
@@ -59,10 +74,10 @@
 \setbeamertemplate{navigation symbols}{}
 
 % Sub-themes to use
-\useinnertheme{UoB}
-\usefonttheme {UoB}
-\usecolortheme{UoB}
-\useoutertheme{UoB}
+\useinnertheme{UoBslides}
+\usefonttheme {UoBslides}
+\usecolortheme{UoBslides}
+\useoutertheme{UoBslides}
 
 % Different handout styles
 \mode<handout>{

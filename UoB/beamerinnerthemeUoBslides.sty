@@ -32,85 +32,38 @@
 
 \mode<presentation>
 
-\usepackage{calc}
+% UoB images
+\pgfdeclareimage{UoBbullet}{UoB-bullet.pdf}
 
-% Lengths
-\newlength{\margin}
-\newlength{\textmargin}
-\ifbeamer@compress
-  \setlength{\margin}{2mm}
-  \setlength{\textmargin}{4mm}
-\else
-  \setlength{\margin}{5mm}
-  \setlength{\textmargin}{5mm}
-\fi
-\newlength{\logowidth}
-\setlength{\logowidth}{28mm}
+% Top level items in itemize
+\setbeamertemplate{itemize item}{\pgfuseimage{UoBbullet}}
 
-% Margins
-\setbeamersize{text margin left=\textmargin,text margin right=\textmargin}
+% Rounded corners on blocks
+\setbeamertemplate{blocks}[rounded]
 
 % UoB images
-\pgfdeclareimage[width=\logowidth]{UoBlogo}{uob-sphere-logo2}
-\pgfdeclareimage[width=.5\logowidth]{UoBurl}{UoB-url}
+\pgfdeclareimage[height=\paperheight]{UoBwatermark}{UoB-watermark.pdf}
 
-% Headline
-\defbeamertemplate*{headline}{UoB}{
-  \vskip\margin
-  \hskip\margin
-  \pgfuseimage{UoBlogo}
-  \parbox[b]{\paperwidth-2\margin-\logowidth}{
-    \raggedleft
-    \ifnum\c@page=1\else\insertshorttitle\\[1mm]\fi
-    \insertdate
-  }
-  \par
-  \vskip0.7\margin
-  \hskip\margin
-  \begin{pgfpicture}
-    \pgfsetstrokecolor{normal text.fg}
-    \pgfsetlinewidth{1pt}
-    \pgfpathmoveto{\pgfpointorigin}
-    \pgfpathlineto{\pgfpoint{\paperwidth-2\margin}{0mm}}
-    \pgfsetroundcap
-    \pgfsetdash{{0pt}{2pt}}{0pt}
-    \pgfusepath{stroke}
-  \end{pgfpicture}
-}
-
-% Footline
-\defbeamertemplate*{footline}{UoB}{
-  \ifbeamer@nourl
-  \else
-    \hskip\margin
-    \begin{pgfpicture}
-      \pgfsetlinewidth{1pt}
-      \pgfpathmoveto{\pgfpointorigin}
-      \pgfpathlineto{\pgfpoint{\paperwidth-2\margin}{0mm}}
-      \pgfsetroundcap
-      \pgfsetdash{{0pt}{2pt}}{0pt}
-      \pgfusepath{stroke}
-    \end{pgfpicture}\vskip0.5\margin
-    \par
-    \hfill\pgfuseimage{UoBurl}\hskip\margin\mbox{}\vskip\margin
-  \fi
-}
-
-% Frametitle
-\defbeamertemplate*{frametitle}{UoB}{
-  \vskip1mm
-  \insertframetitle
-}
-
-% Background
-
-\defbeamertemplate*{background canvas}{UoB}{
-  \ifbeamer@nowatermark
-  \else
-    \ifnum\c@page=1
-      \pgfuseimage{UoBwatermark}
+% Title page
+\defbeamertemplate*{title page}{UoB}{
+  \vbox{}
+  \vfill
+  \begin{beamercolorbox}[sep=8pt]{title}
+    \usebeamerfont{title}\inserttitle\par
+    \ifx\insertsubtitle\@empty
+    \else
+      \hskip1em
+      {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}
     \fi
-  \fi
+  \end{beamercolorbox}
+  \begin{beamercolorbox}[sep=8pt]{author}
+    \usebeamerfont{author}\insertauthor
+  \end{beamercolorbox}
+  \begin{beamercolorbox}[sep=8pt]{institute}
+    \usebeamerfont{institute}\insertinstitute
+  \end{beamercolorbox}
+  \vfill
+  \vbox{}
 }
 
 \mode<all>

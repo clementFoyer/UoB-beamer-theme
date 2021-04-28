@@ -2,10 +2,11 @@
 % University of Bristol presentation theme based on the PowerPoint template
 %
 % Copyright (c) 2012, David A.W. Barton (david.barton@bristol.ac.uk)
+% Copyright (c) 2021, Clement Foyer (clement.foyer@bristol.ac.uk)
 % All rights reserved.
 %
 % The latest version of this theme can be found at
-%   https://github.com/db9052/UoB-beamer-theme
+%   https://github.com/clementFoyer/UoB-beamer-theme
 % 
 % Redistribution and use in source and binary forms, with or without
 % modification, are permitted provided that the following conditions are met:
@@ -80,18 +81,19 @@
 
 % Footline
 \defbeamertemplate*{footline}{UoBslides}{
+  \hskip\margin
+  \begin{pgfpicture}
+    \pgfsetlinewidth{1pt}
+    \pgfpathmoveto{\pgfpointorigin}
+    \pgfpathlineto{\pgfpoint{\paperwidth-2\margin}{0mm}}
+    \pgfsetroundcap
+    \pgfsetdash{{0pt}{2pt}}{0pt}
+    \pgfusepath{stroke}
+  \end{pgfpicture}\vskip0.5\margin
+  \par
+  \hskip\margin\insertframenumber
   \ifbeamer@nourl
   \else
-    \hskip\margin
-    \begin{pgfpicture}
-      \pgfsetlinewidth{1pt}
-      \pgfpathmoveto{\pgfpointorigin}
-      \pgfpathlineto{\pgfpoint{\paperwidth-2\margin}{0mm}}
-      \pgfsetroundcap
-      \pgfsetdash{{0pt}{2pt}}{0pt}
-      \pgfusepath{stroke}
-    \end{pgfpicture}\vskip0.5\margin
-    \par
     \hfill\pgfuseimage{UoBurl}\hskip\margin\mbox{}\vskip\margin
   \fi
 }

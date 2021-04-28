@@ -3,10 +3,11 @@
 Copyright (c) 2012, David A.W. Barton (david.barton@bristol.ac.uk)  
 Copyright (c) 2016, Tom Diethe (tom.diethe@bristol.ac.uk)  
 Copyright (c) 2017, Kacper Sokol (k.sokol@bristol.ac.uk)  
+Copyright (C) 2021, Clement Foyer (clement.foyer@bristol.ac.uk)
 All rights reserved.
 
 The latest version of this theme can be found on
-[GitHub](https://github.com/IRC-SPHERE/UoB-beamer-theme)
+[GitHub](https://github.com/clementFoyer/UoB-beamer-theme)
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions are met:
